@@ -1,8 +1,6 @@
 import Component from "@/class/Component"
-
-class M {
-	static Component = Component
-}
+import Page from "@/pages"
+import Routes from "@/routes/router"
 
 namespace T {
 	export interface Component {
@@ -10,6 +8,5 @@ namespace T {
 	}
 }
 
-export default M
-export { Component }
+export { Component, Page, Routes }
 export type { T }

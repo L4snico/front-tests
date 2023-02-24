@@ -1,11 +1,10 @@
-import M, { T } from "@/modules"
-import { Button } from "@mui/material"
+import { Component, Routes, T } from "@/modules"
 
-class App extends M.Component {
+class App extends Component {
 	component: T.Component = App
 
 	static build() {
-		return <>Hi</>
+		return <><Routes/></>
 	}
 }
 

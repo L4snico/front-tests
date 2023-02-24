@@ -1,15 +1,15 @@
 import Component from "@/class/Component"
 
-class Modules {
+class M {
 	static Component = Component
 }
 
-namespace Module {
+namespace T {
 	export interface Component {
 		build: () => JSX.Element
 	}
 }
 
-export default Modules
+export default M
 export { Component }
-export type { Module }
+export type { T }

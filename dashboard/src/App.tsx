@@ -1,7 +1,7 @@
-import { Component, Module } from "@/modules"
+import M, { T } from "@/modules"
 
-class App extends Component {
-	component: Module.Component = App
+class App extends M.Component {
+	component: T.Component = App
 
 	static build() {
 		return <>App</>

@@ -1,8 +1,8 @@
-import { Module } from "@/modules"
+import { T } from "@/modules"
 import React from "react"
 
 class Component<IProps = {}> extends React.Component<IProps> {
-	component: Module.Component = Component
+	component: T.Component = Component
 
 	static build() {
 		return <></>

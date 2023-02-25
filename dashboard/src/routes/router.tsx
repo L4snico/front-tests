@@ -1,4 +1,4 @@
-import { Component, Page, T } from "@/modules"
+import { Component, Page, T } from "modules"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 const router = createBrowserRouter([

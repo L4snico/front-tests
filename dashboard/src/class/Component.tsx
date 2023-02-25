@@ -1,4 +1,4 @@
-import { T } from "@/modules"
+import { T } from "modules"
 import React from "react"
 
 class Component<IProps = {}> extends React.Component<IProps> {

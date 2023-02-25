@@ -1,4 +1,4 @@
-import { Component, Routes, T } from "@/modules"
+import { Component, Routes, T } from "modules"
 
 class App extends Component {
 	component: T.Component = App

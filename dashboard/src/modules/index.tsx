@@ -1,6 +1,6 @@
-import Component from "@/class/Component"
-import Page from "@/pages"
-import Routes from "@/routes/router"
+import Component from "class/Component"
+import Page from "pages"
+import Routes from "routes/router"
 
 namespace T {
 	export interface Component {

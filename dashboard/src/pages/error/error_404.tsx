@@ -1,4 +1,4 @@
-import { Component, T } from "@/modules";
+import { Component, T } from "modules";
 
 class Error404 extends Component {
     component: T.Component = Error404

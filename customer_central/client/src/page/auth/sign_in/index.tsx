@@ -1,7 +1,7 @@
-import Component from "@/class/Component";
+import Component from "@/class/component";
 
 class SignInPage extends Component {
-    component: T.Component = SignInPage
+    element: T.Component = SignInPage
 
     static build(): JSX.Element {
         return <>

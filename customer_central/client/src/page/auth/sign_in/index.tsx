@@ -13,8 +13,14 @@ class SignInPage extends Component {
         const theme = useTheme()
         const colorMode = React.useContext(ColorModeContext)
         const [showPassword, setShowPassword] = React.useState(false)
-        const [signing, setSigning] = React.useState(false)
+        const [signing, setSigning] = React.useState<boolean | "ok">(false)
         const navigate = useNavigate()
+
+        React.useEffect(() => {
+            if (signing === "ok") {
+                navigate("/panel")
+            }
+        }, [signing])
         
         return <>
             <Grid container sx={{ height: "100vh" }}>
@@ -64,7 +70,7 @@ class SignInPage extends Component {
                                     </FormControl>
                                     <Link href="#" variant="body2">Forgot password?</Link>
                                     <LoadingButton
-                                        loading={signing}
+                                        loading={!!signing}
                                         loadingPosition="start"
                                         startIcon={<></>}
                                         variant="contained"
@@ -76,8 +82,7 @@ class SignInPage extends Component {
                                             if (!signing) {
                                                 setSigning(true)
                                                 setInterval(() => {
-                                                    setSigning(false)
-                                                    navigate("/panel")
+                                                    setSigning("ok")
                                                 }, 2000)
                                             }
                                         }}

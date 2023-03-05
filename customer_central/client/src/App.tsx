@@ -4,6 +4,7 @@ import "@fontsource/roboto/500.css"
 import "@fontsource/roboto/700.css"
 import Component from "@/class/Component"
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material"
+import Routes from "@/router/routes"
 
 const theme = createTheme({
 	palette: {
@@ -18,7 +19,7 @@ class App extends Component {
 		return <>
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-				asd
+				<Routes />
 			</ThemeProvider>
 		</>
 	}

@@ -1,8 +1,10 @@
 import Component from "@/class/component";
-import { AppBar, Box, Button, Container, FormControl, Grid, IconButton, Input, InputAdornment, InputLabel, Link, OutlinedInput, TextField, Toolbar, Typography, useTheme } from "@mui/material";
+import { AppBar, Box, Container, FormControl, Grid, IconButton, InputAdornment, InputLabel, Link, OutlinedInput, TextField, Toolbar, Typography, useTheme } from "@mui/material";
 import { DarkMode, Domain, LightMode, Visibility, VisibilityOff } from "@mui/icons-material";
+import { LoadingButton } from "@mui/lab";
 import ColorModeContext from "@/context/color_mode";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 class SignInPage extends Component {
     element: T.Component = SignInPage
@@ -11,6 +13,8 @@ class SignInPage extends Component {
         const theme = useTheme()
         const colorMode = React.useContext(ColorModeContext)
         const [showPassword, setShowPassword] = React.useState(false)
+        const [signing, setSigning] = React.useState(false)
+        const navigate = useNavigate()
         
         return <>
             <Grid container sx={{ height: "100vh" }}>
@@ -59,15 +63,27 @@ class SignInPage extends Component {
                                         />
                                     </FormControl>
                                     <Link href="#" variant="body2">Forgot password?</Link>
-                                    <Button
+                                    <LoadingButton
+                                        loading={signing}
+                                        loadingPosition="start"
+                                        startIcon={<></>}
                                         variant="contained"
                                         disableElevation
                                         fullWidth
                                         sx={{ mt: 2 }}
                                         size="large"
+                                        onClick={() => {
+                                            if (!signing) {
+                                                setSigning(true)
+                                                setInterval(() => {
+                                                    setSigning(false)
+                                                    navigate("/panel")
+                                                }, 2000)
+                                            }
+                                        }}
                                     >
                                         Sign In
-                                    </Button>
+                                    </LoadingButton>
                                 </Box>
                             </Box>
                         </Container>

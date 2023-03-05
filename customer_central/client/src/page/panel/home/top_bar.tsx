@@ -16,7 +16,18 @@ class TopBar extends Component {
         const navigate = useNavigate()
         
         return <>
-            <AppBar position="static" elevation={0} color="primary" variant="outlined" sx={{ borderRight: 0, borderTop: 0, borderLeft: 0 }}>
+            <AppBar
+                position="absolute"
+                elevation={0}
+                color="primary"
+                variant="outlined"
+                sx={{ 
+                    borderRight: 0, 
+                    borderTop: 0, 
+                    borderLeft: 0, 
+                    zIndex: (theme) => theme.zIndex.drawer + 1
+                }}
+            >
                 <Toolbar>
                     <Domain sx={{ mr: 1 }} color={theme.palette.mode === "light" ? "secondary" : "primary"} />
                     <Typography sx={{ flexGrow: 1 }}>Domain</Typography>

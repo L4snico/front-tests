@@ -1,4 +1,5 @@
 import Component from "@/class/component";
+import SideBar from "./side_bar";
 import TopBar from "./top_bar";
 
 class PanelHomePage extends Component {
@@ -7,6 +8,7 @@ class PanelHomePage extends Component {
     static build(): JSX.Element {
         return <>
             <TopBar />
+            <SideBar />
         </>
     }
 }

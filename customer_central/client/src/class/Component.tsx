@@ -1,9 +1,9 @@
 import React from "react"
 
 class Component<Props = {}> extends React.Component<Props> {
-	element: T.Component = Component
+	element: T.Component<Props> = Component
 
-	static build() {
+	static build(props: any) {
 		return <></>
 	}
 

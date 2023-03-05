@@ -1,5 +1,5 @@
 namespace T {
-    export interface Component {
-		build: () => JSX.Element
+    export interface Component<Props = {}> {
+		build: (props: Props) => JSX.Element
 	}
 }

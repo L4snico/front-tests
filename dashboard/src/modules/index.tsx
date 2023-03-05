@@ -8,5 +8,6 @@ namespace T {
 	}
 }
 
+
 export { Component, Page, Routes }
 export type { T }

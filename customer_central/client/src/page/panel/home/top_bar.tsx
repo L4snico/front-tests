@@ -41,7 +41,7 @@ class TopBar extends Component {
                         variant="text"
                         onClick={(e) => setMenuAnchor(e.currentTarget)}
                         endIcon={<KeyboardArrowDown />}
-                        color={theme.palette.mode === "light" ? "secondary" : "primary"}
+                        sx={{ color: "#FFF" }}
                     >
                         Customer
                     </Button>

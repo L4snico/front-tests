@@ -1,6 +1,7 @@
 import Component from "@/class/component";
 import ColorModeContext from "@/context/color_mode";
-import { DarkMode, Domain, KeyboardArrowDown, LightMode, Logout } from "@mui/icons-material";
+import PanelContext from "@/context/panel";
+import { DarkMode, Domain, KeyboardArrowDown, LightMode, Logout, Menu as MenuIcon } from "@mui/icons-material";
 import { AppBar, Button, IconButton, ListItemIcon, Menu, MenuItem, Toolbar, Typography, useTheme } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +15,7 @@ class TopBar extends Component {
         const [menuAnchor, setMenuAnchor] = React.useState<null | HTMLElement>(null)
         const toggleMenu = Boolean(menuAnchor)
         const navigate = useNavigate()
+        const panel = React.useContext(PanelContext)
         
         return <>
             <AppBar
@@ -29,6 +31,12 @@ class TopBar extends Component {
                 }}
             >
                 <Toolbar>
+                    <IconButton
+                        sx={{ mr: 2 }}
+                        onClick={panel.side_bar.toggleSize}
+                    >
+                        <MenuIcon />
+                    </IconButton>
                     <Domain sx={{ mr: 1 }} color={theme.palette.mode === "light" ? "secondary" : "primary"} />
                     <Typography sx={{ flexGrow: 1 }}>Domain</Typography>
                     <IconButton

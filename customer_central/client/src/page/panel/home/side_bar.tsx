@@ -1,6 +1,8 @@
 import Component from "@/class/component";
+import PanelContext from "@/context/panel";
 import { Apps, Description, Home, SupportAgent } from "@mui/icons-material";
-import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar } from "@mui/material";
+import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Tooltip } from "@mui/material";
+import React from "react";
 
 const side_bar_width = 200
 
@@ -12,14 +14,36 @@ class SideBarItem extends Component<SideBarItemProps> {
     element = SideBarItem
 
     static build(props: SideBarItemProps): JSX.Element {
+        const panel = React.useContext(PanelContext)
+
         return <>
             <ListItem>
-                <ListItemButton>
-                    <ListItemIcon>
-                        {props.icon}
-                    </ListItemIcon>
-                    <ListItemText primary={props.text} />
-                </ListItemButton>
+                {panel.side_bar.size === "normal" && <>
+                    <ListItemButton
+                        sx={{
+                            minHeight: 48,
+                        }}
+                    >
+                        <ListItemIcon>
+                            {props.icon}
+                        </ListItemIcon>
+                        <ListItemText primary={props.text} />
+                    </ListItemButton>
+                </>}
+
+                {panel.side_bar.size === "small" && <>
+                    <Tooltip title={props.text} placement="right">
+                        <ListItemButton
+                            sx={{
+                                minHeight: 48,
+                            }}
+                        >
+                            <ListItemIcon sx={{ minWidth: 0 }}>
+                                {props.icon}
+                            </ListItemIcon>
+                        </ListItemButton>
+                    </Tooltip>
+                </>}
             </ListItem>
         </>
     }

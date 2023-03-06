@@ -1,6 +1,8 @@
 import Component from "@/class/component";
 import PanelContext from "@/context/panel";
+import { Box } from "@mui/material";
 import React from "react";
+import Content from "./content";
 import SideBar from "./side_bar";
 import TopBar from "./top_bar";
 
@@ -24,8 +26,11 @@ class PanelHomePage extends Component {
         
         return <>
             <PanelContext.Provider value={panel}>
-                <TopBar />
-                <SideBar />
+                <Box sx={{ display: "flex" }}>
+                    <TopBar />
+                    <SideBar />
+                    <Content />
+                </Box>
             </PanelContext.Provider>
         </>
     }

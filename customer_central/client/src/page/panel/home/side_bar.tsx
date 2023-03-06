@@ -94,17 +94,15 @@ class SideBar extends Component {
         const panel = React.useContext(PanelContext)
         
         return <>
-            <Box sx={{ width: { sm: side_bar_width }, flexShrink: { sm: 0 } }}>
-                <CustomDrawer variant="permanent" open={panel.side_bar.open}>
-                    <Toolbar />
-                    <List>
-                        <SideBarItem icon={<Home />} text="Home" />
-                        <SideBarItem icon={<Apps />} text="Apps" />
-                        <SideBarItem icon={<Description />} text="Contracts" />
-                        <SideBarItem icon={<SupportAgent />} text="Support" />
-                    </List>
-                </CustomDrawer>
-            </Box>
+            <CustomDrawer variant="permanent" open={panel.side_bar.open}>
+                <Toolbar />
+                <List>
+                    <SideBarItem icon={<Home />} text="Home" />
+                    <SideBarItem icon={<Apps />} text="Apps" />
+                    <SideBarItem icon={<Description />} text="Contracts" />
+                    <SideBarItem icon={<SupportAgent />} text="Support" />
+                </List>
+            </CustomDrawer>
         </>
     }
 }

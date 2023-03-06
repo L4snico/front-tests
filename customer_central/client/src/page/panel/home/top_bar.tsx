@@ -32,7 +32,7 @@ class TopBar extends Component {
             >
                 <Toolbar>
                     <IconButton
-                        sx={{ mr: 2 }}
+                        sx={{ mr: 2, color: "#FFF" }}
                         onClick={panel.side_bar.toggleSize}
                     >
                         <MenuIcon />

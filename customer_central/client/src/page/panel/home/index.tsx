@@ -9,14 +9,17 @@ class PanelHomePage extends Component {
 
     static build(): JSX.Element {
         const [sideBarSize, setSideBarSize] = React.useState<"normal" | "small">("normal")
+        const [sideBarOpen, setSideBarOpen] = React.useState(true)
         const panel = React.useMemo(
             () => ({
                 side_bar: {
                     size: sideBarSize,
                     toggleSize: () => setSideBarSize(sideBarSize === "normal" ? "small" : "normal"),
+                    open: sideBarOpen,
+                    toggleOpen: () => setSideBarOpen((prev) => !prev),
                 }
             }),
-            [sideBarSize]
+            [sideBarSize, sideBarOpen]
         )
         
         return <>

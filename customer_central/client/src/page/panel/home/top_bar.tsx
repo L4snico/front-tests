@@ -33,7 +33,7 @@ class TopBar extends Component {
                 <Toolbar>
                     <IconButton
                         sx={{ mr: 2, color: "#FFF" }}
-                        onClick={panel.side_bar.toggleSize}
+                        onClick={panel.side_bar.toggleOpen}
                     >
                         <MenuIcon />
                     </IconButton>

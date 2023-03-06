@@ -46,7 +46,7 @@ class SignInPage extends Component {
                                     alignItems: "center",
                                 }}
                             >
-                                <Typography variant="h5">Customer Central</Typography>
+                                <Typography variant="h5">Customer Portal</Typography>
                                 <Box component="form" noValidate sx={{ mt: 3, width: "100%" }}>
                                     <TextField label="Email" fullWidth margin="normal" />
                                     <FormControl fullWidth margin="normal">
